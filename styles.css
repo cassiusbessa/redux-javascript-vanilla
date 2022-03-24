@@ -1,0 +1,13 @@
+#day {
+  background-color: red;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+}
+
+#night {
+  background-color: blue;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+}

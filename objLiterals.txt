@@ -1,0 +1,26 @@
+const reducer = (state = INITIAL_STATE, action) => {
+  const reducerObject = {
+    CHANGE_THEME: () => ({
+      theme: state.theme === 'day' ? 'night' : 'day'
+    }),
+    DEFAULT: () => INITIAL_STATE,
+  }
+
+  return (reducerObject[action.type] || reducerObject[DEFAULT])()
+}
+
+
+-------------------------------------------------------------------------------------------------------------
+
+const switchTheme = (currTheme) =>({
+    theme: currTheme === 'day' ? 'night' : 'day'
+  });
+
+const reducer = (state = INITIAL_STATE, action) => {
+  const reducerObject = {
+    CHANGE_THEME: () => switchTheme(state.theme),
+    DEFAULT: () => INITIAL_STATE,
+  }
+
+  return (reducerObject[action.type] || reducerObject['DEFAULT'])()
+}
